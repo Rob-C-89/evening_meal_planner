@@ -12,8 +12,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('evening_meal_planner')
 
+print("Welcome to your Evening Meal Planner!")
+print("Here is your week's meal plan:")
 
-print("Hello World")
-
-stock = SHEET.worksheet("meals_list").get_all_values()
-print(stock)
