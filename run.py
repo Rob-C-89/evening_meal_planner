@@ -244,8 +244,14 @@ def return_random_meals():
         return_random_meals()
 
 
-def create_shopping_list(meal_plan):
+def create_shopping_list(random_meals):
     print("Here is your shopping list for the week:\n")
+    shopping_list = []
+    for meal in random_meals:
+        for ingredient in meal.ingredients:
+            shopping_list.append(ingredient)
+
+    print(shopping_list)
 
 
 print("Welcome to your Evening Meal Planner!\n")
