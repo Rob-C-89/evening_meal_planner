@@ -14,6 +14,14 @@ class Meal:
         self.recipe = recipe
         self.ingredients = ingredients
 
+    def meal_info(self):
+        return (
+            f"Name: {self.name}, "
+            f"Contains: {self.contains}, "
+            f" Recipe link: {self.recipe}, "
+            f" Ingredients: {self.ingredients}"
+        )
+
 
 """
 Objects with Meal class
@@ -173,6 +181,35 @@ ThaiCurry = Meal(
         "jasmine rice",
     ],
 )
+
+meal_list = [
+    FishAndChips,
+    SausageAndMash,
+    ChickenCurry,
+    SpagBol,
+    Gnocchi,
+    BeanChilli,
+    Seabass,
+    Penne,
+    Lasagne,
+    FishPie,
+    ChickpeaStew,
+    LentilCurry,
+    StirFry,
+    Tacos,
+    BakedPotato,
+    Risotto,
+    ShepherdsPie,
+    Stroganoff,
+    Cheeseburger,
+    Pie,
+    ThaiCurry
+]
+
+print(meal_list)
+
+print(Meal.meal_info(Pie))
+
 """
 Data structure ends here
 """
