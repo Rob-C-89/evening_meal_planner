@@ -252,6 +252,30 @@ def create_shopping_list(random_meals):
             shopping_list.append(ingredient)
 
     print(shopping_list)
+    print("")
+
+    show_recipes(random_meals)
+
+
+def show_recipes(random_meals):
+    recipe_response = (input(
+        "If you would like to see links to recipes, "
+        "please press 'enter'."
+        "If you don't require recipes, "
+        "please press any other key and then 'enter' to continue:")
+    )
+    if recipe_response == "":
+        print("Here are some recipe links for your meal plan\n")
+        for meal in random_meals:
+            print(f"{meal.name} - {meal.recipe}")
+            print("")
+    else:
+        add_personal_meals()
+
+
+def add_personal_meals():
+    print("To customise your experience,"
+          "would you like to add your own meals to the Meal Planner?")
 
 
 print("Welcome to your Evening Meal Planner!\n")
