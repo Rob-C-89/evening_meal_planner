@@ -228,9 +228,24 @@ def return_random_meals():
     print(f"Thursday - {random_meals[3].name}")
     print(f"Friday - {random_meals[4].name}")
     print(f"Saturday - {random_meals[5].name}")
-    print(f"Sunday - {random_meals[6].name}")
+    print(f"Sunday - {random_meals[6].name}\n")
 
-    print("")
+    sample_response = (input(
+        "If you are happy with your selection, "
+        "please press 'enter' to continue. "
+        "If you would like to see a different meal plan, "
+        "please press any other key and then 'enter':")
+    )
+    if sample_response == "":
+        print("We're glad you like your Evening Meal Plan!\n")
+        create_shopping_list(random_meals)
+
+    else:
+        return_random_meals()
+
+
+def create_shopping_list(meal_plan):
+    print("Here is your shopping list for the week:\n")
 
 
 print("Welcome to your Evening Meal Planner!\n")
