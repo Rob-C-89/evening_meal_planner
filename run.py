@@ -270,12 +270,43 @@ def show_recipes(random_meals):
             print(f"{meal.name} - {meal.recipe}")
             print("")
     else:
-        add_personal_meals()
+        personal_meals_request()
 
 
-def add_personal_meals():
-    print("To customise your experience,"
-          "would you like to add your own meals to the Meal Planner?")
+def personal_meals_request():
+    personalise_response = input(
+        "To customise your experience,"
+        "would you like to add your own meals to the Meal Planner?"
+        "If yes, please press 'enter'."
+        "If no, please press any other key and then 'enter' to continue:"
+    )
+
+    if personalise_response == "":
+        add_personal_meal()
+    else:
+        ending_function()
+
+
+def add_personal_meal():
+
+    new_name = input("Please enter the name of your meal:")
+    new_contains = input("Please enter any ingredients, separated with commas,"
+                        "that users may dislike or be allergic to:")
+    new_recipe = input("Please enter a link to the recipe for your meal:")
+    new_ingredients = input("Please enter the ingredients for your meal,"
+                        "separated with commas:")
+    
+    print(new_name)
+    print(new_contains)
+    print(new_recipe)
+    print(new_ingredients)
+
+
+    ending_function()
+
+
+def ending_function():
+    print("Thanks for using the Evening Meal Planner")
 
 
 print("Welcome to your Evening Meal Planner!\n")
