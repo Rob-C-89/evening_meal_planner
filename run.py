@@ -206,13 +206,32 @@ meal_list = [
     ThaiCurry
 ]
 
-print(meal_list)
-
-print(Meal.meal_info(Pie))
 
 """
 Data structure ends here
 """
 
+"""
+Functions
+"""
+
+
+def return_random_meals():
+    import random
+
+    random_meals = random.sample(meal_list, 7)
+    print("Here are your week's evening meals:\n")
+
+    print(f"Monday - {random_meals[0].name}")
+    print(f"Tuesday - {random_meals[1].name}")
+    print(f"Wednesday - {random_meals[2].name}")
+    print(f"Thursday - {random_meals[3].name}")
+    print(f"Friday - {random_meals[4].name}")
+    print(f"Saturday - {random_meals[5].name}")
+    print(f"Sunday - {random_meals[6].name}")
+
+    print("")
+
+
 print("Welcome to your Evening Meal Planner!\n")
-print("Here is your week's meal plan:\n")
+return_random_meals()
