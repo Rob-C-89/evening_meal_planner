@@ -16,10 +16,10 @@ class Meal:
 
     def meal_info(self):
         return (
-            f"Name: {self.name}, "
-            f"Contains: {self.contains}, "
-            f" Recipe link: {self.recipe}, "
-            f" Ingredients: {self.ingredients}"
+            f"Name: {self.name},\n"
+            f"Contains: {self.contains},\n"
+            f"Recipe link: {self.recipe},\n"
+            f"Ingredients: {self.ingredients}\n"
         )
 
 
@@ -234,7 +234,7 @@ def return_random_meals():
         "If you are happy with your selection, "
         "please press 'enter' to continue. "
         "If you would like to see a different meal plan, "
-        "please press any other key and then 'enter':")
+        "please press any other key and then 'enter':\n")
     )
     if sample_response == "":
         print("We're glad you like your Evening Meal Plan!\n")
@@ -262,13 +262,15 @@ def show_recipes(random_meals):
         "If you would like to see links to recipes, "
         "please press 'enter'."
         "If you don't require recipes, "
-        "please press any other key and then 'enter' to continue:")
+        "please press any other key and then 'enter' to continue:\n")
     )
     if recipe_response == "":
         print("Here are some recipe links for your meal plan\n")
         for meal in random_meals:
             print(f"{meal.name} - {meal.recipe}")
             print("")
+        personal_meals_request()
+
     else:
         personal_meals_request()
 
@@ -278,7 +280,7 @@ def personal_meals_request():
         "To customise your experience,"
         "would you like to add your own meals to the Meal Planner?"
         "If yes, please press 'enter'."
-        "If no, please press any other key and then 'enter' to continue:"
+        "If no, please press any other key and then 'enter' to continue:\n"
     )
 
     if personalise_response == "":
@@ -289,24 +291,42 @@ def personal_meals_request():
 
 def add_personal_meal():
 
-    new_name = input("Please enter the name of your meal:")
+    new_name = input("Please enter the name of your meal:\n")
     new_contains = input("Please enter any ingredients, separated with commas,"
-                        "that users may dislike or be allergic to:")
-    new_recipe = input("Please enter a link to the recipe for your meal:")
+                         "that users may dislike or be allergic to:\n")
+    new_recipe = input("Please enter a link to the recipe for your meal:\n")
     new_ingredients = input("Please enter the ingredients for your meal,"
-                        "separated with commas:")
-    
-    print(new_name)
-    print(new_contains)
-    print(new_recipe)
-    print(new_ingredients)
+                            "separated with commas:\n")
+    NewMeal = (Meal(new_name, new_contains, new_recipe, new_ingredients))
+    meal_list.append(NewMeal)
 
+    print("")
+    print("Thank you, you have added:\n")
+    print(Meal.meal_info(NewMeal))
 
-    ending_function()
+    add_another_meal_response = input(
+        "Would you like to add another meal to the Meal Planner?\n"
+        "If yes, please press 'enter'.\n"
+        "If no, please press any other key and then 'enter' to continue:\n"
+    )
+
+    if add_another_meal_response == "":
+        add_personal_meal()
+    else:
+        restart_program_response = input(
+            "Would you like to see a new meal plan?\n"
+            "If yes, please press 'enter'"
+            "To exit the program, press any key, followed by 'enter'"
+        )
+
+        if restart_program_response == "":
+            return_random_meals()
+        else:
+            ending_function()
 
 
 def ending_function():
-    print("Thanks for using the Evening Meal Planner")
+    print("Thanks for using the Evening Meal Planner\n")
 
 
 print("Welcome to your Evening Meal Planner!\n")
