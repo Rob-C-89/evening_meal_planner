@@ -297,7 +297,13 @@ def add_personal_meal():
     new_recipe = input("Please enter a link to the recipe for your meal:\n")
     new_ingredients = input("Please enter the ingredients for your meal,"
                             "separated with commas:\n")
-    NewMeal = (Meal(new_name, new_contains, new_recipe, new_ingredients))
+    
+    NewMeal = Meal(
+        new_name,
+        new_contains.split(","),
+        new_recipe,
+        new_ingredients.split(","),
+        )
     meal_list.append(NewMeal)
 
     print("")
@@ -313,6 +319,7 @@ def add_personal_meal():
     if add_another_meal_response == "":
         add_personal_meal()
     else:
+        print("")
         restart_program_response = input(
             "Would you like to see a new meal plan?\n"
             "If yes, please press 'enter'"
@@ -326,7 +333,8 @@ def add_personal_meal():
 
 
 def ending_function():
-    print("Thanks for using the Evening Meal Planner\n")
+    print("")
+    print("Thank you for using the Evening Meal Planner\n")
 
 
 print("Welcome to your Evening Meal Planner!\n")
