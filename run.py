@@ -214,12 +214,31 @@ Data structure ends here
 """
 Functions
 """
+filtered_meal_list = []
+
+def get_restrictions():
+    print("Before we create your meal plan,"
+          "let's check for any dietary restrictions,"
+          "i.e. allergies or dislikes.")
+
+    restrictions_input = input(
+        "Please enter any ingredients you would like to avoid,"
+        "seperated with commas, and then press 'enter'.\n"
+        "If you have no restrictions, just press 'enter':\n")
+
+    if restrictions_input == "":
+        print("You have entered no dietary restrictions.\n")
+        filtered_meal_list.extend(meal_list)
+        return_random_meals()
+ 
+    else:
+        restrictions = [item.strip().lower() for item in restrictions_input.split(",")]
+        print(f"You have entered the following dietary restrictions: {restrictions}\n")
 
 
 def return_random_meals():
     import random
-
-    random_meals = random.sample(meal_list, 7)
+    random_meals = random.sample(filtered_meal_list, 7)
     print("Here are your week's evening meals:\n")
 
     print(f"Monday - {random_meals[0].name}")
@@ -304,7 +323,7 @@ def add_personal_meal():
         new_recipe,
         new_ingredients.split(","),
         )
-    meal_list.append(NewMeal)
+    filtered_meal_list.append(NewMeal)
 
     print("")
     print("Thank you, you have added:\n")
@@ -338,4 +357,4 @@ def ending_function():
 
 
 print("Welcome to your Evening Meal Planner!\n")
-return_random_meals()
+get_restrictions()
