@@ -216,6 +216,7 @@ Functions
 """
 filtered_meal_list = []
 
+
 def get_restrictions():
     print("Before we create your meal plan,"
           "let's check for any dietary restrictions,"
@@ -230,10 +231,13 @@ def get_restrictions():
         print("You have entered no dietary restrictions.\n")
         filtered_meal_list.extend(meal_list)
         return_random_meals()
- 
+
     else:
-        restrictions = [item.strip().lower() for item in restrictions_input.split(",")]
-        print(f"You have entered the following dietary restrictions: {restrictions}\n")
+        restrictions = [item.strip().lower()
+                        for item in restrictions_input.split(",")]
+        print(
+            f"You have entered the following dietary restrictions:"
+            f"{restrictions}\n")
 
         for meal in meal_list:
             should_remove = False
@@ -338,13 +342,13 @@ def add_personal_meal():
     new_recipe = input("Please enter a link to the recipe for your meal:\n")
     new_ingredients = input("Please enter the ingredients for your meal,"
                             "separated with commas:\n")
-    
+
     NewMeal = Meal(
         new_name,
         new_contains.split(","),
         new_recipe,
         new_ingredients.split(","),
-        )
+    )
     filtered_meal_list.append(NewMeal)
 
     print("")
