@@ -235,6 +235,28 @@ def get_restrictions():
         restrictions = [item.strip().lower() for item in restrictions_input.split(",")]
         print(f"You have entered the following dietary restrictions: {restrictions}\n")
 
+        for meal in meal_list:
+            should_remove = False
+            if isinstance(meal.contains, str):
+                if meal.contains.lower() in restrictions:
+                    should_remove = True
+            elif isinstance(meal.contains, list):
+                for item in meal.contains:
+                    if item.lower() in restrictions:
+                        should_remove = True
+                        break
+            if not should_remove:
+                for ingredient in meal.ingredients:
+                    for restriction in restrictions:
+                        if restriction in ingredient.lower():
+                            should_remove = True
+                            break
+            if not should_remove:
+                filtered_meal_list.append(meal)
+        print("We have updated the meal options based on your reply.\n")
+        input("Press 'enter' to continue:\n")
+        return_random_meals()
+
 
 def return_random_meals():
     import random
@@ -251,7 +273,7 @@ def return_random_meals():
 
     sample_response = (input(
         "If you are happy with your selection, "
-        "please press 'enter' to continue. "
+        "please press 'enter' to continue.\n "
         "If you would like to see a different meal plan, "
         "please press any other key and then 'enter':\n")
     )
