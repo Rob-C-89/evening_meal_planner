@@ -337,6 +337,7 @@ def show_recipes(random_meals):
         personal_meals_request()
 
     else:
+        print("")
         personal_meals_request()
 
 
@@ -348,8 +349,8 @@ def personal_meals_request():
     """
     personalise_response = input(
         "To customise your experience,"
-        "would you like to add your own meals to the Meal Planner?"
-        "If yes, please press 'enter'."
+        "would you like to add your own meals to the Meal Planner?\n"
+        "If yes, please press 'enter'.\n"
         "If no, please press any other key and then 'enter' to continue:\n"
     )
 
