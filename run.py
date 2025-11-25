@@ -218,6 +218,11 @@ filtered_meal_list = []
 
 
 def get_restrictions():
+    """
+    Get dietary restrictions from user.
+    Remove meals from meal list that contain restricted ingredients,
+    either in the 'contains' attribute or the 'ingredients' attribute.
+    """
     print("Before we create your meal plan,"
           "let's check for any dietary restrictions,"
           "i.e. allergies or dislikes.")
@@ -263,6 +268,12 @@ def get_restrictions():
 
 
 def return_random_meals():
+    """
+    Return seven randomised meals from the filtered meal list
+    and display to user.
+    Ask user if they are happy with the selection,
+    if not, re-run the function to return a different selection.
+    """
     import random
     random_meals = random.sample(filtered_meal_list, 7)
     print("Here are your week's evening meals:\n")
@@ -290,6 +301,10 @@ def return_random_meals():
 
 
 def create_shopping_list(random_meals):
+    """
+    Create and display a shopping list based on the ingredients
+    required for the meals in the meal plan.
+    """
     print("Here is your shopping list for the week:\n")
     shopping_list = []
     for meal in random_meals:
@@ -303,6 +318,11 @@ def create_shopping_list(random_meals):
 
 
 def show_recipes(random_meals):
+    """
+    Ask user if they would like to see recipe links
+    for the meals in their meal plan.
+    If yes, display recipe links.
+    """
     recipe_response = (input(
         "If you would like to see links to recipes, "
         "please press 'enter'."
@@ -321,6 +341,11 @@ def show_recipes(random_meals):
 
 
 def personal_meals_request():
+    """
+    Ask user if they would like to add their own meals
+    to the Meal Planner.
+    If yes, run Add Personal Meal function.
+    """
     personalise_response = input(
         "To customise your experience,"
         "would you like to add your own meals to the Meal Planner?"
@@ -335,7 +360,13 @@ def personal_meals_request():
 
 
 def add_personal_meal():
-
+    """
+    Ask for user input to create a new Meal object
+    and add it to the filtered meal list.
+    Repeat process if user would like to add another meal,
+    otherwise ask if they would like to see a new meal plan
+    or exit the program.
+    """
     new_name = input("Please enter the name of your meal:\n")
     new_contains = input("Please enter any ingredients, separated with commas,"
                          "that users may dislike or be allergic to:\n")
@@ -378,6 +409,9 @@ def add_personal_meal():
 
 
 def ending_function():
+    """
+    End program with a thank you message.
+    """
     print("")
     print("Thank you for using the Evening Meal Planner\n")
 
