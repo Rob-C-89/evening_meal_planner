@@ -312,7 +312,9 @@ def create_shopping_list(random_meals):
         for ingredient in meal.ingredients:
             shopping_list.append(ingredient)
 
-    print(shopping_list)
+    for item in sorted(shopping_list):
+        print(item.capitalize())
+
     print("")
 
     show_recipes(random_meals)
