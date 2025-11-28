@@ -435,12 +435,30 @@ def add_personal_meal():
     otherwise ask if they would like to see a new meal plan
     or exit the program.
     """
-    new_name = input("Please enter the name of your meal:\n")
-    new_contains = input("Please enter any ingredients, separated with commas,"
-                         "that users may dislike or be allergic to:\n")
-    new_recipe = input("Please enter a link to the recipe for your meal:\n")
-    new_ingredients = input("Please enter the ingredients for your meal,"
-                            "separated with commas:\n")
+    while True:
+        new_name = input("Please enter the name of your meal:\n")
+        if validate_input(new_name):
+            break
+
+    while True:
+        new_contains = input(
+            "Please enter any ingredients, separated with commas,"
+            "that users may dislike or be allergic to:\n"
+            )
+        if validate_input(new_contains):
+            break
+
+        new_recipe = input(
+            "Please enter a link to the recipe for your meal:\n"
+            )
+
+    while True:
+        new_ingredients = input(
+            "Please enter the ingredients for your meal,"
+            "separated with commas:\n"
+            )
+        if validate_input(new_ingredients):
+            break
 
     NewMeal = Meal(
         new_name,
@@ -469,7 +487,7 @@ def add_personal_meal():
             print("")
             restart_program_response = input(
                 "Would you like to see a new meal plan?\n"
-                "If yes, please press 'enter'"
+                "If yes, please press 'enter'\n"
                 "To exit the program, press any key, followed by 'enter'"
             )
 
