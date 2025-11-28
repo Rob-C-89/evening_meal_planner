@@ -258,8 +258,8 @@ def get_restrictions():
     Remove meals from meal list that contain restricted ingredients,
     either in the 'contains' attribute or the 'ingredients' attribute.
     """
-    print("Before we create your meal plan,"
-          "let's check for any dietary restrictions,"
+    print("Before we create your meal plan, "
+          "let's check for any dietary restrictions, "
           "i.e. allergies or dislikes.")
 
     restrictions_input = input(
@@ -293,14 +293,40 @@ def get_restrictions():
                             break
             if not should_remove:
                 filtered_meal_list.append(meal)
-        print("We have updated the meal options based on your reply.\n")
-        print("Please see below you new meal data base, with your"
-              "restrictions taken into account"
-              )
-        for meal in filtered_meal_list:
-            print(meal.name)
-        input("Press 'enter' to continue:\n")
-        return_random_meals()
+
+        if len(filtered_meal_list) < 7:
+            print(
+                "Thanks for your response.\n"
+                "Please see below you new meal data base, with your "
+                "restrictions taken into account:\n"
+                )
+            for meal in filtered_meal_list:
+                print(meal.name)
+                print("")
+            print(f"Your meal database now contains "
+                  f"'{len(filtered_meal_list)}' "
+                  f"meals! "
+                  f"Evening Meal Planner requires a minimum "
+                  f"of 7 meals to function! ")
+            low_sample_response = input(
+                "Please press 'enter' to proceed to add your own meals, "
+                "or any other key followed by 'enter' to exit "
+                "the program.")
+            if low_sample_response == "":
+                add_personal_meal()
+            else:
+                ending_function()
+
+        else:
+            print("We have updated the meal options based on your reply.\n")
+            print("Please see below you new meal data base, with your "
+                  "restrictions taken into account"
+                  )
+            for meal in filtered_meal_list:
+                print(meal.name)
+            print("")
+            input("Press 'enter' to see your Evening Meal Plan!:\n")
+            return_random_meals()
 
 
 def return_random_meals():
