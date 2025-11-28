@@ -262,10 +262,19 @@ def get_restrictions():
           "let's check for any dietary restrictions, "
           "i.e. allergies or dislikes.")
 
-    restrictions_input = input(
-        "Please enter any ingredients you would like to avoid,"
-        "seperated with commas, and then press 'enter'.\n"
-        "If you have no restrictions, just press 'enter':\n")
+    while True:
+        restrictions_input = input(
+            "Please enter any ingredients you would like to avoid,"
+            "seperated with commas, and then press 'enter'.\n"
+            "If you have no restrictions, just press 'enter':\n")
+
+        if all(char.isalpha() or char.isspace() or char == ','
+               for char in restrictions_input):
+            break
+        else:
+            print("Invalid input. Please enter letters, spaces, "
+                  "and commas only.")
+            continue
 
     if restrictions_input == "":
         print("You have entered no dietary restrictions.\n")
