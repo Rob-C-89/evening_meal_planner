@@ -479,6 +479,22 @@ def add_personal_meal():
                 ending_function()
 
 
+def validate_input(user_input):
+    """
+    Validate user input to all strings and strings with commas
+    to prevent errors.
+    """
+    if not user_input:
+        print("Input cannot be blank. Please try again.\n")
+        return False
+    elif all(char.isalpha() or char.isspace() or char == ','
+             for char in user_input):
+        return True
+    else:
+        print("Invalid input. Please use letters, spaces, and commas only.\n")
+        return False
+
+
 def ending_function():
     """
     End program with a thank you message.
