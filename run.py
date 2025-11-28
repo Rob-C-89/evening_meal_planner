@@ -1,3 +1,5 @@
+import random
+
 """
 Program data structure begins here
 """
@@ -274,7 +276,6 @@ def return_random_meals():
     Ask user if they are happy with the selection,
     if not, re-run the function to return a different selection.
     """
-    import random
     random_meals = random.sample(filtered_meal_list, 7)
     print("Here are your week's evening meals:\n")
 
