@@ -303,19 +303,7 @@ def get_restrictions():
             for meal in filtered_meal_list:
                 print(meal.name)
                 print("")
-            print(f"Your meal database now contains "
-                  f"'{len(filtered_meal_list)}' "
-                  f"meals! "
-                  f"Evening Meal Planner requires a minimum "
-                  f"of 7 meals to function! ")
-            low_sample_response = input(
-                "Please press 'enter' to proceed to add your own meals, "
-                "or any other key followed by 'enter' to exit "
-                "the program.")
-            if low_sample_response == "":
-                add_personal_meal()
-            else:
-                ending_function()
+            sample_too_low()
 
         else:
             print("We have updated the meal options based on your reply.\n")
@@ -327,6 +315,22 @@ def get_restrictions():
             print("")
             input("Press 'enter' to see your Evening Meal Plan!:\n")
             return_random_meals()
+
+
+def sample_too_low():
+    print(f"Your meal database now contains "
+          f"'{len(filtered_meal_list)}' "
+          f"meals! "
+          f"Evening Meal Planner requires a minimum "
+          f"of 7 meals to function! ")
+    low_sample_response = input(
+        "\nPlease press 'enter' to proceed to add your own meals, "
+        "or any other key followed by 'enter' to exit "
+        "the program.")
+    if low_sample_response == "":
+        add_personal_meal()
+    else:
+        ending_function()
 
 
 def return_random_meals():
@@ -459,17 +463,20 @@ def add_personal_meal():
     if add_another_meal_response == "":
         add_personal_meal()
     else:
-        print("")
-        restart_program_response = input(
-            "Would you like to see a new meal plan?\n"
-            "If yes, please press 'enter'"
-            "To exit the program, press any key, followed by 'enter'"
-        )
-
-        if restart_program_response == "":
-            return_random_meals()
+        if len(filtered_meal_list) < 7:
+            sample_too_low()
         else:
-            ending_function()
+            print("")
+            restart_program_response = input(
+                "Would you like to see a new meal plan?\n"
+                "If yes, please press 'enter'"
+                "To exit the program, press any key, followed by 'enter'"
+            )
+
+            if restart_program_response == "":
+                return_random_meals()
+            else:
+                ending_function()
 
 
 def ending_function():
