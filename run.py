@@ -281,14 +281,10 @@ def get_restrictions():
 
         for meal in meal_list:
             should_remove = False
-            if isinstance(meal.contains, str):
-                if meal.contains.lower() in restrictions:
+            for item in meal.contains:
+                if item.lower() in restrictions:
                     should_remove = True
-            elif isinstance(meal.contains, list):
-                for item in meal.contains:
-                    if item.lower() in restrictions:
-                        should_remove = True
-                        break
+                    break
             if not should_remove:
                 for ingredient in meal.ingredients:
                     for restriction in restrictions:
@@ -298,6 +294,11 @@ def get_restrictions():
             if not should_remove:
                 filtered_meal_list.append(meal)
         print("We have updated the meal options based on your reply.\n")
+        print("Please see below you new meal data base, with your"
+              "restrictions taken into account"
+              )
+        for meal in filtered_meal_list:
+            print(meal.name)
         input("Press 'enter' to continue:\n")
         return_random_meals()
 
