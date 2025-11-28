@@ -4,6 +4,215 @@ import random
 Program data structure begins here
 """
 
+MEAL_DATABASE = [
+    {
+        "name": "Fish and Chips",
+        "contains": ["fish"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": ["fish", "chips", "peas"]
+    },
+    {
+        "name": "Sausage and Mash",
+        "contains": ["meat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": ["sausage", "potato"]
+    },
+    {
+        "name": "Chicken Curry and Rice",
+        "contains": ["meat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "chicken",
+            "jar of curry sauce",
+            "rice"
+        ]
+    },
+    {
+        "name": "Spaghetti Bolognese",
+        "contains": ["meat", "wheat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "mince",
+            "jar of bolognese sauce",
+            "spaghetti"
+        ]
+    },
+    {
+        "name": "Gnocchi with Pesto",
+        "contains": ["wheat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": ["gnocchi", "jar of pesto"]
+    },
+    {
+        "name": "Bean Chilli with Rice",
+        "contains": [],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "tinned beans",
+            "jar of chilli sauce",
+            "rice"
+        ]
+    },
+    {
+        "name": "Seabass with New Potatoes",
+        "contains": ["fish"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "seabass fillet",
+            "new potatoes",
+            "lemon"
+        ]
+    },
+    {
+        "name": "Penne with Vodka Tomato Sauce",
+        "contains": ["wheat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "penne pasta",
+            "tinned tomato",
+            "vodka"
+        ]
+    },
+    {
+        "name": "Roast Veg Lasagne",
+        "contains": ["wheat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "lasagne sheets",
+            "summer vegetables",
+            "tinned tomato",
+            "mozarella"
+        ]
+    },
+    {
+        "name": "Fish Pie",
+        "contains": ["fish"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "frozen fish pie mix",
+            "baking potato",
+            "milk",
+            "flour"
+        ]
+    },
+    {
+        "name": "Chickpea Stew",
+        "contains": [],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "tinned chickpea",
+            "coconut milk",
+            "onions",
+            "garlic"
+        ]
+    },
+    {
+        "name": "Lentil Curry and Rice",
+        "contains": [],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "dried lentils",
+            "Madras curry powder",
+            "onions",
+            "garlic",
+            "rice"
+        ]
+    },
+    {
+        "name": "Stir-fried Veg Noodles",
+        "contains": ["wheat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "bag stir fry veg",
+            "noodles",
+            "soy sauce"
+        ]
+    },
+    {
+        "name": "Jackfruit Tacos",
+        "contains": ["wheat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "tinned jackfruit",
+            "sour cream",
+            "tacos",
+            "jar of salsa"
+        ]
+    },
+    {
+        "name": "Baked Potato with Beans and Cheese",
+        "contains": [],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "baking potato",
+            "tin of baked beans",
+            "Cheddar cheese"
+        ]
+    },
+    {
+        "name": "Mushroom Risotto",
+        "contains": [],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": ["risotto rice", "mushroom", "parmesan"]
+    },
+    {
+        "name": "Shepherd's Pie",
+        "contains": ["meat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "lamb mince",
+            "onions",
+            "baking potato",
+            "tinned tomato"
+        ]
+    },
+    {
+        "name": "Mushroom Stroganoff and Rice",
+        "contains": [],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": ["mushroom", "cream", "paprika", "rice"]
+    },
+    {
+        "name": "Cheeseburger and Fries",
+        "contains": ["meat", "wheat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "burger patties",
+            "burger buns",
+            "pickles",
+            "American cheese",
+            "fries"
+        ]
+    },
+    {
+        "name": "Chicken Pie and Mash",
+        "contains": ["meat", "wheat"],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "chicken thighs",
+            "milk",
+            "flour",
+            "butter",
+            "leeks",
+            "puff pastry",
+            "baking potato"
+        ]
+    },
+    {
+        "name": "Thai Green Curry with Rice",
+        "contains": [],
+        "recipe": "www.bbcgoodfood.com",
+        "ingredients": [
+            "tofu",
+            "carrots",
+            "red pepper",
+            "coconut milk",
+            "Thai Green Curry Paste",
+            "jasmine rice"
+        ]
+    }
+]
+
 
 class Meal:
     """
@@ -25,188 +234,12 @@ class Meal:
         )
 
 
-"""
-Objects with Meal class
-"""
-FishAndChips = Meal(
-    "Fish and Chips", "fish", "www.bbcgoodfood.com", ["fish", "chips", "peas"]
-)
+meal_list = []
 
-SausageAndMash = Meal(
-    "Sausage and Mash", "meat", "www.bbcgoodfood.com", ["sausage", "potato"]
-)
-
-ChickenCurry = Meal(
-    "Chicken Curry and Rice",
-    "meat",
-    "www.bbcgoodfood.com",
-    ["chicken", "jar of curry sauce", "rice"],
-)
-
-SpagBol = Meal(
-    "Spaghetti Bolognese",
-    ["meat", "wheat"],
-    "www.bbcgoodfood.com",
-    ["mince", "jar of bolognese sauce", "spaghetti"],
-)
-
-Gnocchi = Meal(
-    "Gnocchi with Pesto",
-    "wheat",
-    "www.bbcgoodfood.com",
-    ["gnocchi", "jar of pesto"]
-)
-
-BeanChilli = Meal(
-    "Bean Chilli with Rice",
-    "",
-    "www.bbcgoodfood.com",
-    ["tinned beans", "jar of chilli sauce", "rice"],
-)
-
-Seabass = Meal(
-    "Seabass with New Potatoes",
-    "fish",
-    "www.bbcgoodfood.com",
-    ["seabass fillet", "new potatoes", "lemon"],
-)
-
-Penne = Meal(
-    "Penne with Vodka Tomato Sauce",
-    "wheat",
-    "www.bbcgoodfood.com",
-    ["penne pasta", "tinned tomato", "vodka"],
-)
-
-Lasagne = Meal(
-    "Roast Veg Lasagne",
-    "wheat",
-    "www.bbcgoodfood.com",
-    ["lasagne sheets", "summer vegetables", "tinned tomato", "mozarella"],
-)
-
-FishPie = Meal(
-    "Fish Pie",
-    "fish",
-    "www.bbcgoodfood.com",
-    ["frozen fish pie mix", "baking potato", "milk", "flour"],
-)
-
-ChickpeaStew = Meal(
-    "Chickpea Stew",
-    "",
-    "www.bbcgoodfood.com",
-    ["tinned chickpea", "coconut milk", "onions", "garlic"],
-)
-
-LentilCurry = Meal(
-    "Lentil Curry and Rice",
-    "",
-    "www.bbcgoodfood.com",
-    ["dried lentils", "Madras curry powder", "onions", "garlic", "rice"],
-)
-
-StirFry = Meal(
-    "Stir-fried Veg Noodles",
-    "wheat",
-    "www.bbcgoodfood.com",
-    ["bag stir fry veg", "noodles", "soy sauce"],
-)
-
-Tacos = Meal(
-    "Jackfruit Tacos",
-    "wheat",
-    "www.bbcgoodfood.com",
-    ["tinned jackfruit", "sour cream", "tacos", "jar of salsa"],
-)
-
-BakedPotato = Meal(
-    "Baked Potato with Beans and Cheese",
-    "",
-    "www.bbcgoodfood.com",
-    ["baking potato", "tin of baked beans", "Cheddar cheese"],
-)
-
-Risotto = Meal(
-    "Mushroom Risotto",
-    "",
-    "www.bbcgoodfood.com",
-    ["risotto rice", "mushroom", "parmesan"],
-)
-
-ShepherdsPie = Meal(
-    "Shepherd's Pie",
-    "meat",
-    "www.bbcgoodfood.com",
-    ["lamb mince", "onions", "baking potato", "tinned tomato"],
-)
-
-Stroganoff = Meal(
-    "Mushroom Stroganoff and Rice",
-    "",
-    "www.bbcgoodfood.com",
-    ["mushroom", "cream", "paprika", "rice"],
-)
-
-Cheeseburger = Meal(
-    "Cheeseburger and Fries",
-    ["meat", "wheat"],
-    "www.bbcgoodfood.com",
-    ["burger patties", "burger buns", "pickles", "American cheese", "fries"],
-)
-
-Pie = Meal(
-    "Chicken Pie and Mash",
-    ["meat", "wheat"],
-    "www.bbcgoodfood.com",
-    [
-        "chicken thighs",
-        "milk",
-        "flour",
-        "butter",
-        "leeks",
-        "puff pastry",
-        "baking potato",
-    ],
-)
-
-ThaiCurry = Meal(
-    "Thai Green Curry with Rice",
-    "",
-    "www.bbcgoodfood.com",
-    [
-        "tofu",
-        "carrots",
-        "red pepper",
-        "coconut milk",
-        "Thai Green Curry Paste",
-        "jasmine rice",
-    ],
-)
-
-meal_list = [
-    FishAndChips,
-    SausageAndMash,
-    ChickenCurry,
-    SpagBol,
-    Gnocchi,
-    BeanChilli,
-    Seabass,
-    Penne,
-    Lasagne,
-    FishPie,
-    ChickpeaStew,
-    LentilCurry,
-    StirFry,
-    Tacos,
-    BakedPotato,
-    Risotto,
-    ShepherdsPie,
-    Stroganoff,
-    Cheeseburger,
-    Pie,
-    ThaiCurry
-]
+for item in MEAL_DATABASE:
+    meal = Meal(item["name"], item["contains"],
+                item["recipe"], item["ingredients"])
+    meal_list.append(meal)
 
 
 """
