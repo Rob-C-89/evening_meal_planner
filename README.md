@@ -72,13 +72,27 @@ The user has the option to create their own meals and add them to the data struc
 
 The scope for extra features in this program is considerable. I ended the project having surpassed my standards for a minimum viable product, but some potential future features may include:
 
-1.  Quantities for the shopping list i.e. 500g fish, 200g potatoes, etc.
+
+1. Separation of the contains/restrictions and the ingredients attributes. At conception of the project, the contains/restrictions attributes for the meal items was to be the only data used to filter the meals list, whereas the ingredient attributes was designed for the purpose of the shopping list.
+
+   As the project progressed, it made sense to include the ingredients when filtering for disliked ingredients. 
+
+   In the future, I would re-write the restrictions function to be a dropdown/numbered list of the 14 common allergens, and then have a seperate information request for dislikes. This would prevent someone who is allergic to fish, and mistyping e.g. 'fihs', being returned a list containing 'fish'.
+
+2. The option to target and remove specific meals on the returned meal plan - if out of the seven meals, the user disliked the idea of one meal, they could have it removed and keep the meal plan mostly the same, with a new random meal for the removed item.
+
+3. A main menu, with a differently organised flow to the program. As I progressed in my project, the flow of the user interactions grew slightly more complex than I had initially anticipated. 
+   I consider it to still be a user-friendly and intuitive program, but with more time I would have the user land on a 'main menu', with options to begin with either seeing a meal plan, viewing the meal database, adding restrictions, or adding their personal meals. This would let the user tailor the experience more to their specific requirements.
+
+4. Using an external database i.e. google sheets for the database. 
+
+5.  Quantities for the shopping list i.e. 500g fish, 200g potatoes, etc.
     
-2.  User input for the number of people following the meal plan, and this manipulating the shopping list quantities.
+6.  User input for the number of people following the meal plan, and this manipulating the shopping list quantities.
     
-3.  A user login which saves restrictions and customised meals for future use.
+7.  A user login which saves restrictions and customised meals for future use.
     
-4.  The option for the user to choose their own meal plan from the data centre, rather than see a random selection.
+8.  The option for the user to choose their own meal plan from the data centre, rather than see a random selection.
     
 ## Testing
 
