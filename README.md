@@ -19,12 +19,12 @@ Finally, the user can add their own personal meals to the data base. If they ask
 
 # Table of Contents
 
-- User Stories
-- Project Planning
-- Features
-- Testing
-- Deployment
-- Credits
+* [User Stories](#user-stories)
+* [Project Planning](#project-planning)
+* [Features](#features)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits--acknowledgments)
 
 ## User Stories
 
