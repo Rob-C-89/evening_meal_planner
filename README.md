@@ -127,8 +127,18 @@ The code has been passed through [CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Deployment
 
-The project has been deployed to Heroku. The URL for the website is:
+The project has been deployed using Code Institutes's Mock Terminal for Heroku. The URL for the website is:
 https://evening-meal-planner-9fed6f279af0.herokuapp.com/
+
+The deployment process is as follows:
+
+- Fork or clone this repository (see section below for instructions)
+- Create a new Heroku app
+- Add config variable: key is 'PORT', value is 8000
+- Set the buildpacks to 'Python' and 'Node.js', in that order (Python on top, Node.js underneath)
+- Link the Heroku app to the repository
+- Click on 'Deploy'
+
 
 
 ### Using the Repository
