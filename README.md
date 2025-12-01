@@ -40,6 +40,10 @@ The user stories for the program and their acceptance criteria are outlined in t
 
 ### Flowchart
 
+A flowchart outlining the user journey has been created using [Lucidchart](https://www.lucidchart.com/pages/).
+
+![Flowchart image of program structure](assets/documentation/emp_flowchart.png)
+
 ## Features
 
 ### Key Features
