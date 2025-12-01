@@ -457,7 +457,7 @@ def add_personal_meal():
         if validate_input(new_contains):
             break
 
-        new_recipe = input(
+    new_recipe = input(
             "Please enter a link to the recipe for your meal:\n"
             )
 
