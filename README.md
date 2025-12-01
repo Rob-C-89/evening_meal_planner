@@ -4,7 +4,7 @@
 
 ![Image of the evening meal planner starting](/assets/documentation/landing.jpg)
 
-Evening Meal Planner is a Python terminal application, which runs in the Code Institute mock terminal on Heroku.
+Evening Meal Planner is a Python terminal application which runs in the Code Institute mock terminal on Heroku.
 
 The deployed program can be viewed [here](https://evening-meal-planner-9fed6f279af0.herokuapp.com/).
 
@@ -16,7 +16,7 @@ The program generates a shopping list for the user, with all the ingredients the
 
 The user can view recipes for the meal plan.
 
-Finally, the user can add their own personal meals to the data base. If they ask to generate a new meal plan, then their personal meals may be included.
+Finally, the user can add their own personal meals to the database. If they ask to generate a new meal plan, then their personal meals may be included.
 
 
 # Table of Contents
@@ -47,7 +47,7 @@ User stories for the program include:
 
 ## Project Planning
 
-The user stories for the program and their acceptance criteria are outlined in the GitHub projects planning page which can be found [here](https://github.com/users/Rob-C-89/projects/9).
+The user stories for the program and their acceptance criteria are outlined in the GitHub projects planning page, which can be found [here](https://github.com/users/Rob-C-89/projects/9).
 
 ### Flowchart
 
@@ -61,13 +61,13 @@ A flowchart outlining the user journey has been created using [Lucidchart](https
 
 **Preliminary dietary restrictions**
 
-Before returning their weekly meal plan, the user is asked if they have any allergies or dislikes. This compiles a list of dietary restrictions. The meal list is then filtered, to prevent dishes containing these foods from being returned to the user.
+Before returning their weekly meal plan, the user is asked if they have any allergies or dislikes. This compiles a list of dietary restrictions. The meal list is then filtered to prevent dishes containing these foods from being returned to the user.
 
 ![Program requesting dietary restrictions](/assets/documentation/restrictions_function.jpg)
 
 **Random meal plan generation**
 
-The program then provides the user with a randomly generated list of seven meals, one for each day of the week. The user is asked if they are happy with their selection, or if they would like to see a different list.
+The program then provides the user with a randomly generated list of seven meals, one for each day of the week. The user is asked if they are happy with their selection or if they would like to see a different list.
 
 ![Program returning random meal list](/assets/documentation/returned_meals.jpg)
 
@@ -89,7 +89,11 @@ The user has the option to create their own meals and add them to the data struc
 
 ![Program accepting personalised meals](/assets/documentation/personal_meal_returned.jpg)
 
+Below is an image of 'Fish with Lemon' being added by the user:
+
 ![Image of program receiving Fish with Lemon](/assets/documentation/fish_with_lemon.jpg)
+
+Below is an image of 'Monday - Fish with Lemon' being included in a new meal plan:
 
 ![Image of program returning new meal plan containing Fish with Lemon](/assets/documentation/personal_meal_returned.jpg)
 
@@ -98,30 +102,30 @@ The user has the option to create their own meals and add them to the data struc
 The scope for extra features in this program is considerable. I ended the project having surpassed my standards for a minimum viable product, but some potential future features may include:
 
 
-1. Separation of the contains/restrictions and the ingredients attributes. At conception of the project, the contains/restrictions attributes for the meal items was to be the only data used to filter the meals list, whereas the ingredient attributes was designed for the purpose of the shopping list.
+1. Separation of the contains('restrictions') and the ingredient attributes. At conception of the project, the contains attribute for the meal items was to be the only data used to filter the meals list, whereas the ingredient attribute was designed solely for the purpose of generating the shopping list.
 
    As the project progressed, it made sense to include the ingredients when filtering for disliked ingredients. 
 
-   In the future, I would re-write the restrictions function to be a dropdown/numbered list of the 14 common allergens, and then have a seperate information request for dislikes. This would prevent someone who is allergic to fish, and mistyping e.g. 'fihs', being returned a list containing 'fish'.
+   In the future, I would rewrite the restrictions function to be a dropdown/numbered list of the 14 common allergens, and then have a separate information request for dislikes. This would prevent someone who is allergic to fish and mistyping (e.g. 'fihs') being returned a list containing 'fish'.
 
 2. The option to target and remove specific meals on the returned meal plan - if out of the seven meals, the user disliked the idea of one meal, they could have it removed and keep the meal plan mostly the same, with a new random meal for the removed item.
 
 3. A main menu, with a differently organised flow to the program. As I progressed in my project, the flow of the user interactions grew slightly more complex than I had initially anticipated. 
-   I consider it to still be a user-friendly and intuitive program, but with more time I would have the user land on a 'main menu', with options to begin with either seeing a meal plan, viewing the meal database, adding restrictions, or adding their personal meals. This would let the user tailor the experience more to their specific requirements.
+   I consider it to still be a user-friendly and intuitive program, but with more time, I would have the user land on a 'main menu', with options to begin with either seeing a meal plan, viewing the meal database, adding restrictions, or adding their personal meals. This would let the user tailor the experience more to their specific requirements.
 
-4. Using an external database i.e. google sheets for the database. 
+4. Using an external database i.e. Google Sheets for the database. 
 
 5.  Quantities for the shopping list i.e. 500g fish, 200g potatoes, etc.
     
 6.  User input for the number of people following the meal plan, and this manipulating the shopping list quantities.
     
-7.  A user login which saves restrictions and customised meals for future use.
+7.  A user login that saves restrictions and customised meals for future use.
     
 8.  The option for the user to choose their own meal plan from the data centre, rather than see a random selection.
 
 ### Input Validation
 
-1. When entering their restrictions, the user is prevented from responding with anything other than letters, whitespace and commas. The user can also not enter nothing and press enter. This is to prevent incorrect data input, and to encourage the user to write in the correct format to generate lists of items.
+1. When entering their restrictions, the user is prevented from responding with anything other than letters, whitespace and commas. As well, the user can not enter nothing and press enter. This is to prevent incorrect data input, and to encourage the user to write in the correct format to generate lists of items.
 
 ![Program handling invalid data input](/assets/documentation/restrictions_validation.jpg)
 
@@ -132,8 +136,6 @@ The scope for extra features in this program is considerable. I ended the projec
 3. On adding personal meals, the user is again prevented from entering anything other than letters, whitespace and commas, or inputting empty data, for the name, contains and recipe attributes. The same validation is not used for the recipe link, as this may contain numbers and symbols.
 
 ![Program handling invalid personal meal input](/assets/documentation/personal_meal_invalid.jpg)
-
-![Program hndling empty personal meal data](/assets/documentation/personal_meal_empty.jpg)
 
     
 ## Testing
@@ -166,10 +168,10 @@ Another bug I encountered was from an error in my code, where after creating a w
 
 ![Error, missing new_recipe attribute no value](/assets/documentation/new_recipe_error.jpg)
 
-As documented in the manul testing section, I moved the code out of the while loop to fix the bug.
+As documented in the manual testing section, I moved the code out of the while loop to fix the bug.
 
 
-Other than this I am unaware of any other bugs.
+Other than this, I am unaware of any bugs.
 
 ### PEP8 Validation
 
@@ -180,7 +182,7 @@ The code has been passed through [CI Python Linter](https://pep8ci.herokuapp.com
 
 ## Deployment
 
-The project has been deployed using Code Institutes's Mock Terminal for Heroku. The URL for the website is:
+The project has been deployed using Code Institute's Mock Terminal for Heroku. The URL for the website is:
 https://evening-meal-planner-9fed6f279af0.herokuapp.com/
 
 The deployment process is as follows:
@@ -200,7 +202,7 @@ The deployment process is as follows:
 
 Cloning a repository pulls down a full copy of all the repository data that GitHub.com has at that point in time, including all versions of every file and folder for the project. You can push your changes to the remote repository on GitHub.com, or pull other people's changes from GitHub.com. 
 
-You can clone the repository from using the following steps:
+You can clone the repository using the following steps:
 
 1. On GitHub, navigate to the main page of the repository
 2. Above the list of files, click  <> Code.
@@ -216,7 +218,7 @@ You can clone the repository from using the following steps:
 
 As an alternative to cloning the repo, you may fork it to your account. This will keep your version free from source updates, allowing you to work on the repository without code or content being altered.
 
-You can fork the repository using the following stepsL
+You can fork the repository using the following steps:
 
 1. Log into your account then navigate to the repository:
     * https://github.com/Rob-C-89/evening_meal_planner
