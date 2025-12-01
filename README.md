@@ -120,6 +120,44 @@ I conducted a series of manual tests as a user using the program. These tests ha
 | Personal meals are added to the meals list, possibility of being returned in meal plan | Request a different meal plan until the personal meal(s) is/are present                       | The personal meals added are included in the random list                          | PASS                                                                                                                                                                                     |
 | Test general flow and program structure                                                | Run the program as a user several times, adding correct and incorrect data                    | The program runs with the expected flow as intended                               | PASS                                                                                                                                                                                     |
 
+### PEP8 Validation
+
+The code has been passed through [CI Python Linter](https://pep8ci.herokuapp.com/) with no errors found.
+
+
 ## Deployment
+
+The project has been deployed to Heroku. The URL for the website is:
+https://evening-meal-planner-9fed6f279af0.herokuapp.com/
+
+
+### Using the Repository
+
+### Cloning
+
+Cloning a repository pulls down a full copy of all the repository data that GitHub.com has at that point in time, including all versions of every file and folder for the project. You can push your changes to the remote repository on GitHub.com, or pull other people's changes from GitHub.com. 
+
+You can clone the repository from using the following steps:
+
+1. On GitHub, navigate to the main page of the repository
+2. Above the list of files, click  <> Code.
+3. Select whether you prefer HTTPS, SSH or CLI, then copy the URL with the clipboard icon
+4. Open Git Bash or Terminal
+5. Change the current working directory to the location where you want the cloned directory.
+6. Type git clone, and then paste the URL. It will look like this:
+    * git clone https://github.com/Rob-C-89/evening_meal_planner
+7. Press Enter to create your local clone.
+
+
+### Forking 
+
+As an alternative to cloning the repo, you may fork it to your account. This will keep your version free from source updates, allowing you to work on the repository without code or content being altered.
+
+You can fork the repository using the following stepsL
+
+1. Log into your account then navigate to the repository:
+    * https://github.com/Rob-C-89/evening_meal_planner
+2. In the top-right corner of the window, you'll see a "Fork" button. 
+3. Click the Fork button to begin the forking process.
 
 ## Credits
