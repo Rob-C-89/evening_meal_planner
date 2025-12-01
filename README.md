@@ -2,6 +2,8 @@
 
 # Evening Meal Planner
 
+![Image of the evening meal planner starting](/assets/documentation/landing.jpg)
+
 Evening Meal Planner is a Python terminal application, which runs in the Code Institute mock terminal on Heroku.
 
 The deployed program can be viewed [here](https://evening-meal-planner-9fed6f279af0.herokuapp.com/).
@@ -61,21 +63,31 @@ A flowchart outlining the user journey has been created using [Lucidchart](https
 
 Before returning their weekly meal plan, the user is asked if they have any allergies or dislikes. This compiles a list of dietary restrictions. The meal list is then filtered, to prevent dishes containing these foods from being returned to the user.
 
+![Program requesting dietary restrictions](/assets/documentation/restrictions_function.jpg)
+
 **Random meal plan generation**
 
 The program then provides the user with a randomly generated list of seven meals, one for each day of the week. The user is asked if they are happy with their selection, or if they would like to see a different list.
+
+![Program returning random meal list](/assets/documentation/returned_meals.jpg)
 
 **Shopping list creation**
 
 After accepting their meal plan, the user is provided with a shopping list. This contains all the ingredients listed in the meals for their plan.
 
+![Program returning shopping list of ingredients](/assets/documentation/shopping_list.jpg)
+
 **Links to recipes**
 
 The user is then asked if they would like to see recipe links for their meals.
 
+![Program returning recipes for meals](/assets/documentation/recipes.jpg)
+
 **Add customised personal meals**
 
 The user has the option to create their own meals and add them to the data structure. They can add as many meals as they like. They then have the option to generate another meal list, which may include the meals they have added, or exit the program.
+
+![Program accepting personalised meals](/assets/documentation/personal_meal_returned.jpg)
 
 ### Future Features
 
@@ -107,9 +119,17 @@ The scope for extra features in this program is considerable. I ended the projec
 
 1. When entering their restrictions, the user is prevented from responding with anything other than letters, whitespace and commas. The user can also not enter nothing and press enter. This is to prevent incorrect data input, and to encourage the user to write in the correct format to generate lists of items.
 
+![Program handling invalid data input](/assets/documentation/restrictions_validation.jpg)
+
 2. If the user's restrictions take the filtered meal list to below 7 items, they are requested to add their own meals, until the list has a minimum of 7 items.
 
+![Program handling too few items](/assets/documentation/too_few_items.jpg)
+
 3. On adding personal meals, the user is again prevented from entering anything other than letters, whitespace and commas, or inputting empty data, for the name, contains and recipe attributes. The same validation is not used for the recipe link, as this may contain numbers and symbols.
+
+![Program handling invalid personal meal input](/assets/documentation/personal_meal_invalid.jpg)
+
+![Program hndling empty personal meal data](/assets/documentation/personal_meal_empty.jpg)
 
     
 ## Testing
@@ -129,9 +149,29 @@ I conducted a series of manual tests as a user using the program. These tests ha
 | Personal meals are added to the meals list, possibility of being returned in meal plan | Request a different meal plan until the personal meal(s) is/are present                       | The personal meals added are included in the random list                          | PASS                                                                                                                                                                                     |
 | Test general flow and program structure                                                | Run the program as a user several times, adding correct and incorrect data                    | The program runs with the expected flow as intended                               | PASS                                                                                                                                                                                     |
 
+### Bugs and Fixes
+
+I encountered a bug when, if the user added too many restrictions, a value error message was thrown and the program was halted:
+
+![Value Error too small sample](/assets/documentation/bug_small_sample.jpg)
+
+To fix this, I wrote code to prompt the user to add more items until the meal list contains at least 7 items.
+
+
+Another bug I encountered was from an error in my code, where after creating a while loop to validate data for the personal meal function, I accidentally included the recipe input in the wrong place. The error looked as follows:
+
+![Error, missing new_recipe attribute no value](/assets/documentation/new_recipe_error.jpg)
+
+As documented in the manul testing section, I moved the code out of the while loop to fix the bug.
+
+
+Other than this I am unaware of any other bugs.
+
 ### PEP8 Validation
 
 The code has been passed through [CI Python Linter](https://pep8ci.herokuapp.com/) with no errors found.
+
+![Image of code passing through linter](/assets/documentation/linter_results.jpg)
 
 
 ## Deployment
