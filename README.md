@@ -89,6 +89,10 @@ The user has the option to create their own meals and add them to the data struc
 
 ![Program accepting personalised meals](/assets/documentation/personal_meal_returned.jpg)
 
+![Image of program receiving Fish with Lemon](/assets/documentation/fish_with_lemon.jpg)
+
+![Image of program returning new meal plan containing Fish with Lemon](/assets/documentation/personal_meal_returned.jpg)
+
 ### Future Features
 
 The scope for extra features in this program is considerable. I ended the project having surpassed my standards for a minimum viable product, but some potential future features may include:
