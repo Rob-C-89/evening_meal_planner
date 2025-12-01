@@ -160,4 +160,46 @@ You can fork the repository using the following stepsL
 2. In the top-right corner of the window, you'll see a "Fork" button. 
 3. Click the Fork button to begin the forking process.
 
-## Credits
+## Credits & Acknowledgments
+
+The following websites/resources were used extensively in the research, planning and development of the project:
+
+W3 Schools - Python
+https://www.w3schools.com/python/default.asp
+
+Python Tutor
+https://pythontutor.com/visualize.html#mode=edit
+
+Code Institute’s Full Stack Software Developer Program
+https://codeinstitute.net/
+
+Code Institute provided the Python Essentials Template for this project
+https://github.com/Code-Institute-Org/python-essentials-template
+
+
+
+Articles and websites which I found useful while researching and developing my website are as follows:
+
+Using ‘if in’ statements with dictionaries
+https://discuss.python.org/t/how-do-i-select-something-from-a-dictionary-within-a-dictionary-using-an-if-statement/45423/6
+
+For loop to iterate over dictionary elements
+https://openstax.org/books/introduction-python-programming/pages/10-4-conditionals-and-looping-in-dictionaries
+
+Online project for simple Allergy checking program
+https://deepnote.com/app/sam-ola-ll/SamOlaModuleTwoProject-019ad06b-f24c-495a-86c6-83949de65cb8
+
+GitHub foodAware program for detecting allergens in packaged food items
+https://github.com/SaVa1/foodAware/blob/main/app.py
+
+Medium Article “How to collect, process and validate data”
+https://medium.com/informatics/user-input-in-python-how-to-collect-process-validate-data-271e482d183f
+
+all() function
+https://www.w3schools.com/python/ref_func_all.asp 
+
+
+No large blocks of code were copied and pasted into this project.
+
+A special thank you to my mentors Brian Macharia and Jubril Akolade for their guidance with this project.
+
