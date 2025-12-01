@@ -93,6 +93,15 @@ The scope for extra features in this program is considerable. I ended the projec
 7.  A user login which saves restrictions and customised meals for future use.
     
 8.  The option for the user to choose their own meal plan from the data centre, rather than see a random selection.
+
+### Input Validation
+
+1. When entering their restrictions, the user is prevented from responding with anything other than letters, whitespace and commas. The user can also not enter nothing and press enter. This is to prevent incorrect data input, and to encourage the user to write in the correct format to generate lists of items.
+
+2. If the user's restrictions take the filtered meal list to below 7 items, they are requested to add their own meals, until the list has a minimum of 7 items.
+
+3. On adding personal meals, the user is again prevented from entering anything other than letters, whitespace and commas, or inputting empty data, for the name, contains and recipe attributes. The same validation is not used for the recipe link, as this may contain numbers and symbols.
+
     
 ## Testing
 
