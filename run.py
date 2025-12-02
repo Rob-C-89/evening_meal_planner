@@ -511,7 +511,7 @@ def add_personal_meal():
             break
 
     NewMeal = Meal(
-        new_name.capitalize(),
+        new_name.title(),
         new_contains,
         new_recipe,
         new_ingredients,
