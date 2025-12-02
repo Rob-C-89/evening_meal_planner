@@ -491,7 +491,7 @@ def add_personal_meal():
             )
         # Split and remove trailing whitespace from ingredients input.
         new_contains = [x.strip() for x in contains_input.split(',')]
-        if validate_input(new_contains):
+        if validate_input(contains_input):
             break
 
     # Skip the validate input function to allow for special characters
@@ -507,7 +507,7 @@ def add_personal_meal():
         )
         # Split and remove trailing whitespace from ingredients input.
         new_ingredients = [x.strip() for x in ingredients_input.split(',')]
-        if validate_input(new_ingredients):
+        if validate_input(ingredients_input):
             break
 
     NewMeal = Meal(
