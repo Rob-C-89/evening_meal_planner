@@ -485,10 +485,11 @@ def add_personal_meal():
             break
 
     while True:
-        new_contains = input(
+        contains_input = input(
             "Please enter any ingredients, separated with commas,"
             "that users may dislike or be allergic to:\n"
             )
+        new_contains = [x.strip() for x in contains_input.split(',')]
         if validate_input(new_contains):
             break
 
@@ -499,18 +500,19 @@ def add_personal_meal():
             )
 
     while True:
-        new_ingredients = input(
+        ingredients_input = input(
             "Please enter the ingredients for your meal,"
             "separated with commas:\n"
-            )
+        )
+        new_ingredients = [x.strip() for x in ingredients_input.split(',')]
         if validate_input(new_ingredients):
             break
 
     NewMeal = Meal(
         new_name,
-        new_contains.split(","),
+        new_contains,
         new_recipe,
-        new_ingredients.split(","),
+        new_ingredients,
     )
     # Append the new meal item to the filtered meal list.
     filtered_meal_list.append(NewMeal)
