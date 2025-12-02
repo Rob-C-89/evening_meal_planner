@@ -457,6 +457,7 @@ def personal_meals_request():
     Ask user if they would like to add their own meals
     to the Meal Planner.
     If yes, run Add Personal Meal function.
+    If no, exit the program.
     """
     personalise_response = input(
         "To customise your experience, "
