@@ -285,7 +285,7 @@ def get_restrictions():
 
     while True:
         restrictions_input = input(
-            "Please enter any ingredients you would like to avoid,"
+            "Please enter any ingredients you would like to avoid, "
             "seperated with commas, and then press 'enter'.\n"
             "If you have no restrictions, just press 'enter':\n")
         # Check input contains only letters, spaces and commas,
@@ -397,7 +397,7 @@ def return_random_meals():
 
     sample_response = (input(
         "If you are happy with your selection, "
-        "please press 'enter' to continue.\n "
+        "please press 'enter' to continue.\n"
         "If you would like to see a different meal plan, "
         "please press any other key and then 'enter':\n")
     )
@@ -436,7 +436,7 @@ def show_recipes(random_meals):
     """
     recipe_response = (input(
         "If you would like to see links to recipes, "
-        "please press 'enter'."
+        "please press 'enter'.\n"
         "If you don't require recipes, "
         "please press any other key and then 'enter' to continue:\n")
     )
@@ -459,7 +459,7 @@ def personal_meals_request():
     If yes, run Add Personal Meal function.
     """
     personalise_response = input(
-        "To customise your experience,"
+        "To customise your experience, "
         "would you like to add your own meals to the Meal Planner?\n"
         "If yes, please press 'enter'.\n"
         "If no, please press any other key and then 'enter' to continue:\n"
@@ -486,7 +486,7 @@ def add_personal_meal():
 
     while True:
         contains_input = input(
-            "Please enter any ingredients, separated with commas,"
+            "Please enter any ingredients, separated with commas, "
             "that users may dislike or be allergic to:\n"
             )
         # Split and remove trailing whitespace from ingredients input.
@@ -502,7 +502,7 @@ def add_personal_meal():
 
     while True:
         ingredients_input = input(
-            "Please enter the ingredients for your meal,"
+            "Please enter the ingredients for your meal, "
             "separated with commas:\n"
         )
         # Split and remove trailing whitespace from ingredients input.
