@@ -462,7 +462,8 @@ def personal_meals_request():
         "To customise your experience, "
         "would you like to add your own meals to the Meal Planner?\n"
         "If yes, please press 'enter'.\n"
-        "If no, please press any other key and then 'enter' to continue:\n"
+        "If no, please press any other key and then 'enter' to exit"
+        "the program:\n"
     )
 
     if personalise_response == "":
