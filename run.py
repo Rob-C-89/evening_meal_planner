@@ -235,7 +235,7 @@ class Meal:
 
 
 meal_list = []
-
+# Create meal list from database.
 for item in MEAL_DATABASE:
     meal = Meal(item["name"], item["contains"],
                 item["recipe"], item["ingredients"])
@@ -267,7 +267,8 @@ def get_restrictions():
             "Please enter any ingredients you would like to avoid,"
             "seperated with commas, and then press 'enter'.\n"
             "If you have no restrictions, just press 'enter':\n")
-
+        # Check input contains only letters, spaces and commas,
+        # else print error message.
         if all(char.isalpha() or char.isspace() or char == ','
                for char in restrictions_input):
             break
@@ -282,27 +283,34 @@ def get_restrictions():
         return_random_meals()
 
     else:
+        # Create restrictions list, in lowercase to match database strings.
         restrictions = [item.strip().lower()
                         for item in restrictions_input.split(",")]
         print(
             f"You have entered the following dietary restrictions:"
             f"{restrictions}\n")
-
+        # Remove meals containing restricted items in the 'contains' attribute.
         for meal in meal_list:
             should_remove = False
             for item in meal.contains:
                 if item.lower() in restrictions:
                     should_remove = True
                     break
+            # Remove meals containing restricted
+            # items in the 'ingredients' attribute.
             if not should_remove:
                 for ingredient in meal.ingredients:
                     for restriction in restrictions:
                         if restriction in ingredient.lower():
                             should_remove = True
                             break
+            # Append approved meals to filtered meal list.
             if not should_remove:
                 filtered_meal_list.append(meal)
 
+        # Check filtered meal list is at least seven items long,
+        # return an error message if under 7 items and request
+        # user to add personal meals.
         if len(filtered_meal_list) < 7:
             print(
                 "Thanks for your response.\n"
@@ -315,6 +323,7 @@ def get_restrictions():
             sample_too_low()
 
         else:
+            # Print the filtered meal list for the user.
             print("We have updated the meal options based on your reply.\n")
             print("Please see below you new meal data base, with your "
                   "restrictions taken into account"
@@ -327,6 +336,11 @@ def get_restrictions():
 
 
 def sample_too_low():
+    """
+    Request the user to add personal meals to the database
+    to increase the filtered meal list to at least 7 items
+    in length, or exit the program.
+    """
     print(f"Your meal database now contains "
           f"'{len(filtered_meal_list)}' "
           f"meals! "
@@ -457,6 +471,8 @@ def add_personal_meal():
         if validate_input(new_contains):
             break
 
+    # Skip the validate input function to allow for special characters
+    # and numbers in the website url.
     new_recipe = input(
             "Please enter a link to the recipe for your meal:\n"
             )
@@ -475,6 +491,7 @@ def add_personal_meal():
         new_recipe,
         new_ingredients.split(","),
     )
+    # Append the new meal item to the filtered meal list.
     filtered_meal_list.append(NewMeal)
 
     print("")
@@ -490,6 +507,8 @@ def add_personal_meal():
     if add_another_meal_response == "":
         add_personal_meal()
     else:
+        # Check if the meal list remains under 7 items,
+        # repeat 'sample too low' function if true.
         if len(filtered_meal_list) < 7:
             sample_too_low()
         else:
@@ -511,9 +530,11 @@ def validate_input(user_input):
     Validate user input to all strings and strings with commas
     to prevent errors.
     """
+    # Check for empty user input.
     if not user_input:
         print("Input cannot be blank. Please try again.\n")
         return False
+    # Check input is only letters, space or commas.
     elif all(char.isalpha() or char.isspace() or char == ','
              for char in user_input):
         return True
@@ -530,5 +551,8 @@ def ending_function():
     print("Thank you for using the Evening Meal Planner\n")
 
 
+# Initial welcome message.
 print("Welcome to your Evening Meal Planner!\n")
+
+# Run start of program with 'get restrictions' function.
 get_restrictions()
