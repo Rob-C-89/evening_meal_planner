@@ -8,19 +8,22 @@ MEAL_DATABASE = [
     {
         "name": "Fish and Chips",
         "contains": ["fish"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "next-level-fish-chips",
         "ingredients": ["fish", "chips", "peas"]
     },
     {
         "name": "Sausage and Mash",
         "contains": ["meat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "bangers-n-mash-with-onion-gravy",
         "ingredients": ["sausage", "potato"]
     },
     {
         "name": "Chicken Curry and Rice",
         "contains": ["meat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "easy-chicken-curry",
         "ingredients": [
             "chicken",
             "jar of curry sauce",
@@ -30,7 +33,8 @@ MEAL_DATABASE = [
     {
         "name": "Spaghetti Bolognese",
         "contains": ["meat", "wheat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "big-batch-bolognese",
         "ingredients": [
             "mince",
             "jar of bolognese sauce",
@@ -40,13 +44,15 @@ MEAL_DATABASE = [
     {
         "name": "Gnocchi with Pesto",
         "contains": ["wheat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "gnocchi-lemon-chive-pesto",
         "ingredients": ["gnocchi", "jar of pesto"]
     },
     {
         "name": "Bean Chilli with Rice",
         "contains": [],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "vegetable-bean-chilli",
         "ingredients": [
             "tinned beans",
             "jar of chilli sauce",
@@ -56,7 +62,8 @@ MEAL_DATABASE = [
     {
         "name": "Seabass with New Potatoes",
         "contains": ["fish"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/"
+        "search?q=seabass",
         "ingredients": [
             "seabass fillet",
             "new potatoes",
@@ -66,7 +73,8 @@ MEAL_DATABASE = [
     {
         "name": "Penne with Vodka Tomato Sauce",
         "contains": ["wheat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "pasta-alla-vodka",
         "ingredients": [
             "penne pasta",
             "tinned tomato",
@@ -76,7 +84,8 @@ MEAL_DATABASE = [
     {
         "name": "Roast Veg Lasagne",
         "contains": ["wheat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "five-veg-lasagne",
         "ingredients": [
             "lasagne sheets",
             "summer vegetables",
@@ -87,7 +96,8 @@ MEAL_DATABASE = [
     {
         "name": "Fish Pie",
         "contains": ["fish"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "family-meals-easy-fish-pie-recipe",
         "ingredients": [
             "frozen fish pie mix",
             "baking potato",
@@ -98,7 +108,8 @@ MEAL_DATABASE = [
     {
         "name": "Chickpea Stew",
         "contains": [],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "spicy-chickpea-stew",
         "ingredients": [
             "tinned chickpea",
             "coconut milk",
@@ -109,7 +120,8 @@ MEAL_DATABASE = [
     {
         "name": "Lentil Curry and Rice",
         "contains": [],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "easy-peasy-lentil-curry",
         "ingredients": [
             "dried lentils",
             "Madras curry powder",
@@ -121,7 +133,8 @@ MEAL_DATABASE = [
     {
         "name": "Stir-fried Veg Noodles",
         "contains": ["wheat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "sticky-tempeh-stir-fry",
         "ingredients": [
             "bag stir fry veg",
             "noodles",
@@ -131,7 +144,8 @@ MEAL_DATABASE = [
     {
         "name": "Jackfruit Tacos",
         "contains": ["wheat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "mini-jackfruit-tacos-charred-sweetcorn-gochujang-mayo",
         "ingredients": [
             "tinned jackfruit",
             "sour cream",
@@ -142,7 +156,8 @@ MEAL_DATABASE = [
     {
         "name": "Baked Potato with Beans and Cheese",
         "contains": [],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "crisp-baked-potatoes",
         "ingredients": [
             "baking potato",
             "tin of baked beans",
@@ -152,13 +167,15 @@ MEAL_DATABASE = [
     {
         "name": "Mushroom Risotto",
         "contains": [],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "mushroom-risotto",
         "ingredients": ["risotto rice", "mushroom", "parmesan"]
     },
     {
         "name": "Shepherd's Pie",
         "contains": ["meat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "no-fuss-shepherds-pie",
         "ingredients": [
             "lamb mince",
             "onions",
@@ -169,13 +186,15 @@ MEAL_DATABASE = [
     {
         "name": "Mushroom Stroganoff and Rice",
         "contains": [],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "no-fuss-shepherds-pie",
         "ingredients": ["mushroom", "cream", "paprika", "rice"]
     },
     {
         "name": "Cheeseburger and Fries",
         "contains": ["meat", "wheat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "cheeseburger-chips",
         "ingredients": [
             "burger patties",
             "burger buns",
@@ -187,7 +206,8 @@ MEAL_DATABASE = [
     {
         "name": "Chicken Pie and Mash",
         "contains": ["meat", "wheat"],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "next-level-chicken-pie",
         "ingredients": [
             "chicken thighs",
             "milk",
@@ -201,7 +221,8 @@ MEAL_DATABASE = [
     {
         "name": "Thai Green Curry with Rice",
         "contains": [],
-        "recipe": "www.bbcgoodfood.com",
+        "recipe": "https://www.bbcgoodfood.com/recipes/"
+        "vegetarian-thai-green-curry",
         "ingredients": [
             "tofu",
             "carrots",
