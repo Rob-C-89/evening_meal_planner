@@ -489,6 +489,7 @@ def add_personal_meal():
             "Please enter any ingredients, separated with commas,"
             "that users may dislike or be allergic to:\n"
             )
+        # Split and remove trailing whitespace from ingredients input.
         new_contains = [x.strip() for x in contains_input.split(',')]
         if validate_input(new_contains):
             break
@@ -504,12 +505,13 @@ def add_personal_meal():
             "Please enter the ingredients for your meal,"
             "separated with commas:\n"
         )
+        # Split and remove trailing whitespace from ingredients input.
         new_ingredients = [x.strip() for x in ingredients_input.split(',')]
         if validate_input(new_ingredients):
             break
 
     NewMeal = Meal(
-        new_name,
+        new_name.capitalize(),
         new_contains,
         new_recipe,
         new_ingredients,
